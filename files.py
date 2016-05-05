@@ -1,13 +1,20 @@
 # Module for working with files
 
-# 1. Open file
-file_name = "log.txt"
-try:
-    text_file = open(file_name)
-    text_file.close()
-except FileNotFoundError:
-    print("File Not Found Error: " + file_name)
+file_name = "meow.txt"
+string = "Meow meow meow!\n"
 
-# 2. Open file in write mode
-text_file = open(file_name, "w")  # also 'r', 'a' and 'b' modes available
-text_file.close()
+# 1. Open file to append
+try:
+    f = open(file_name, "a")  # also 'w', 'a' and 'b' modes available
+    size = f.write(string)
+    assert size == len(string)
+finally:
+    f.close()
+    print("Bytes written: " + str(size))
+
+# 2. Open file in read mode
+
+# this is the same as 'try-with-resources' in Java 7
+with open(file_name, "r") as f:
+    text = f.read()
+    print(text)

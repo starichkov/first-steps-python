@@ -50,15 +50,3 @@ get_max = function_max
 get_powed_max = function_multi_max
 print("Max is: " + str(get_max(1, 2)))
 print("Powed max is: " + str(get_powed_max(get_max, function_pow, rai(1, 10), rai(1, 10))))
-
-try:
-    num = 7 / 0
-except ZeroDivisionError:
-    print("Catch exact exception")
-    raise  # rethrow exception
-except (ValueError, TypeError):  # multi-catch
-    print("Multi-catch block")
-except:  # catch all possible exceptions
-    print("Catch all block")
-finally:
-    print("Finally block")

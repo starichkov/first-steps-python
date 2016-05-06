@@ -4,16 +4,10 @@ pattern = r"meow"
 string = "Cat say meow meow!"
 
 # search for occurrences at the beginning of the string
-if re.match(pattern, string):
-    print("Match")
-else:
-    print("No match")
+print("Match") if re.match(pattern, string) else print("No match")
 
 # search for occurrences through whole string
-if re.search(pattern, string):
-    print("Match")
-else:
-    print("No match")
+print("Match") if re.search(pattern, string) else print("No match")
 
 # find all occurrences of pattern
 print(re.findall(pattern, string))

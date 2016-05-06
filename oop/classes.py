@@ -6,6 +6,14 @@ class Animal:
     def make_sound(self):
         print("What does the fox say?!")
 
+    @classmethod
+    def class_method(cls, text):
+        print(text)
+
+    @staticmethod
+    def static_method(text):
+        print(text)
+
 
 class Cat(Animal):
     # class ("static") variable
@@ -27,3 +35,6 @@ print(cat)
 
 cat.make_sound()
 print("Cat has {} legs. {}!".format(cat.legs, Cat.legs))
+
+Animal.class_method("This is a class method!")
+Animal.static_method("This is a static method!")
